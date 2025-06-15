@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=League+Spartan:wght@100..900&family=Orbitron:wght@400..900&family=Secular+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>clock</title>
+</head>
+<body>
+  <!-- CLOCK -->
+  <div id="clocksection">
+    <div class="header">
+      <h1>current time</h1>
+    </div>
+
+
+    <div class="container">
+      <h1 id="clockClock">
+        <span class="hours">00</span> :
+        <span class="minutes">00</span> :
+        <span class="seconds">00</span>
+      </h1>
+
+      <h1 id="AMPM">AM</h1>
+    </div>
+
+    <div id="ampmcontainer">
+      <button id="ampmbutton" onclick="toggle();">12 hour Format</button>
+    </div>
+  </div>
+
+  <!-- STOPWATCH -->
+  <div id="stopwatchsection" style="display:none;">
+    <div class="header">
+      <h1>stopwatch</h1>
+    </div>
+
+    <div class="container">
+      <h1 id="stopwatchClock">
+        <span id="swhours">00</span>:
+        <span id="swminutes">00</span>:
+        <span id="swseconds">00</span>
+      </h1>
+    </div>
+
+    <div id="stopwatchcontainer">
+      <button class="stopwatchbutton" onclick="swtoggle()">Start</button>
+      <button class="stopwatchbutton1" onclick="restart()">Restart</button>
+    </div>
+  </div>
+
+  <!-- ALARM -->
+  <div id="alarmsection">
+    <div class="header">
+      <h1>alarm</h1>
+    </div>
+
+    <div class="container">
+      <h1 id="alarmClock">
+        <span class="hours">00</span> :
+        <span class="minutes">00</span> :
+        <span class="seconds">00</span>
+      </h1>
+    </div>
+
+    <div id="addcontainer">
+      <button class="addalarm" onclick="addAlarm()">Add Alarm</button>
+      <button class="stopalarm" onclick="stopalarmdiagram()">Stop Alarm</button>
+    </div>
+
+    <div class="alarmcontainer">
+        <div id = "alarmstuff">
+            <div class="placeholder-mask" id="placeholderMask">00:00</div>
+            <input type="text" id="alarmInput">
+            <label for = "">
+                <select id = "type">
+                    <option id = "option1" value = "AM">AM</option>
+                    <option value = "PM">PM</option>
+                </select>
+            </label>
+        </div>
+
+        
+
+        <div id="alarmbuttons">
+            <button class="setalarm" onclick="startAlarmChecking()">Set Alarm</button>
+        </div>
+
+        <button class = "close" >
+            X
+        </button>
+    </div>
+
+    <div id = "stopalarmcontainer">
+            <div id = "confirmtext">Are you sure you want to stop the alarm?</div>
+            <div id = "confirmbuttonsdiv">
+              <button class = "confirmbutton" onclick = "stopalarm()">
+                Stop Alarm
+              </button>
+              <button class = "confirmbutton" onclick = "goback()">
+                Go back
+              </button>              
+            </div>
+
+            <button class = "close">
+              X
+             </button>
+            
+    </div>
+</div>
+
+  <div id="buttonscontainer">
+    <button class="button" onclick="showsection('clock')">clock</button>
+    <button class="button" onclick="showsection('stopwatch')">stopwatch</button>
+    <button class="button" onclick="showsection('alarm')">alarm</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
