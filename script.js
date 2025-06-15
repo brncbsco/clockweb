@@ -10,10 +10,12 @@ let IntervalId; // moved to global
 function toggle() {
   clearInterval(IntervalId);
   if (is12hour === false) {
+    twelve();
     IntervalId = setInterval(twelve, 1000);
     is12hour = true;
     document.getElementById("ampmbutton").textContent = "24 hour Format";
   } else {
+    twentyfour();
     IntervalId = setInterval(twentyfour, 1000);
     is12hour = false;
     document.getElementById("ampmbutton").textContent = "12 hour Format";
